@@ -13,7 +13,7 @@ import java.util.List;
 @Configuration
 public class StudentConfig {
 
-    @Bean
+    /*@Bean
     CommandLineRunner commandLineRunner(StudentRepository studentRepository){
         return args -> {
             Student felipe = new Student(
@@ -24,5 +24,5 @@ public class StudentConfig {
                     List.of(felipe)
             );
         };
-    }
+    }*/
 }

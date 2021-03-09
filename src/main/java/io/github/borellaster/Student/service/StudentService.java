@@ -22,13 +22,19 @@ public class StudentService {
 
     public List<Student> findAll(){
         return studentRepository.findAll();
-        /*return List.of(
-                new Student(
-                        1L,"Felipe", "Borella", "borellaster@gmail.com", LocalDate.of(1985, Month.FEBRUARY, 10)
-                ),
-                new Student(
-                        1L,"Luccas", "Perone" ,"luccasperone@gmail.com", LocalDate.of(1990, Month.AUGUST, 5)
-                )
-        );*/
     }
+
+    public Student save(Student student){
+        return studentRepository.save(student);
+    }
+
+    public void delete(Long id){
+        boolean exists = studentRepository.existsById(id);
+        if(!exists){
+            throw new IllegalStateException("Student does not exist");
+        }
+        studentRepository.deleteById(id);
+    }
+
+
 }
